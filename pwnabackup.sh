@@ -33,7 +33,9 @@ FILES_TO_BACKUP=(
   /var/log/pwnagotchi.log
 )
 
-echo "@ backing up $UNIT_HOSTNAME to $OUTPUT ..."
+echo "[+] backing up $UNIT_HOSTNAME to $OUTPUT ..."
+
+echo "[!] Remove existing backup if exists first!"
 
 # Deleting old backups before creating new backup archive
 rm -rf "$BACKUP_LOCATION"
@@ -46,12 +48,18 @@ for file in "${FILES_TO_BACKUP[@]}"; do
   sudo cp -R $file "$BACKUP_LOCATION$dir/"
 done
 
+echo "[+] Copy completed!\n"
+echo "[?] Check above for any errors\n"
+echo "[+] Now zipping up files\n"
+
 # Archive copied files
 ZIPFILE="$PWD/$OUTPUT"
 pushd $PWD
 cd "$BACKUP_LOCATION"
 zip -r -9 -q "$ZIPFILE" .
 popd
+
+echo "[+] Completing final task, remove copied files"
 
 #Removing copied files but leaving ZIPFILE
 rm -rf "$BACKUP_LOCATION/root"
