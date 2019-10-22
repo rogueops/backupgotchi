@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 #
-# Version 1.3b
+# Version 1.4b
 #
 # Modded version of original backup
 # script that does not requite root
@@ -8,7 +8,7 @@
 # output zip file in the pi home
 # under /home/pi/pwnabackup
 #
-# Usage: sudo ./pwnabackup.sh nameOFzipFile.zip
+# Usage: sudo ./pwnabackup.sh
 #
 
 # name of the ethernet gadget interface on the host
@@ -24,6 +24,7 @@ BACKUP_LOCATION=/home/pi/pwnabackup
 FILES_TO_BACKUP=(
   /root/brain.nn
   /root/brain.json
+  /root/.api-report.json
   /root/handshakes
   /etc/pwnagotchi/
   /etc/hostname
@@ -42,7 +43,7 @@ for file in "${FILES_TO_BACKUP[@]}"; do
   dir=$(dirname $file)
   echo "  $file -> $BACKUP_LOCATION$dir/"
   mkdir -p "$BACKUP_LOCATION/$dir"
-  sudo cp -R /$file "$BACKUP_LOCATION$dir/"
+  sudo cp -R $file "$BACKUP_LOCATION$dir/"
 done
 
 # Archive copied files
