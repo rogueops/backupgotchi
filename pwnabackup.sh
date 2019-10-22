@@ -6,18 +6,18 @@
 # script that does not requite root
 # to be setup/enabled and puts the
 # output zip file in the pi home
+# folder and all copied files
 # under /home/pi/pwnabackup
 #
 # Usage: sudo ./pwnabackup.sh
 #
 
-# name of the ethernet gadget interface on the host
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
 # output backup zip file
 OUTPUT=$(pwnagotchi-backup.zip)
 
-# temporary folder
+# temp folder
 BACKUP_LOCATION=/home/pi/pwnabackup
 
 # what to backup
