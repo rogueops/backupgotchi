@@ -9,7 +9,9 @@
 # folder and all copied files
 # under /home/pi/pwnabackup
 #
-# Usage: sudo ./pwnabackup.sh
+# Backup: sudo ./pwnabackup.sh
+#
+# Restore: sudo tar -xvf /home/pi/nameOFfile.tar.gz -C/
 #
 
 UNIT_HOSTNAME=$(cat /etc/hostname)
@@ -56,7 +58,7 @@ echo "[+] Now zipping up files\n"
 ZIPFILE="$PWD/$OUTPUT"
 pushd $PWD
 cd "$BACKUP_LOCATION"
-zip -r -9 -q "$ZIPFILE" .
+tar -cvzf "$ZIPFILE" .
 popd
 
 echo "[+] Completing final task, remove copied files"
