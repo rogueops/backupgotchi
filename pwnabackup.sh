@@ -17,7 +17,7 @@
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
 # output backup zip file
-OUTPUT=$(pwnagotchi-backup.zip)
+OUTPUT=$(pwnagotchi-backup.tar)
 
 # temp folder
 BACKUP_LOCATION=/home/pi/pwnabackup
@@ -52,7 +52,7 @@ done
 
 echo "[+] Copy completed!\n"
 echo "[?] Check above for any errors\n"
-echo "[+] Now zipping up files\n"
+echo "[+] Now archiving files copied\n"
 
 # Archive copied files
 ZIPFILE="$PWD/$OUTPUT"
@@ -63,7 +63,7 @@ popd
 
 echo "[+] Completing final task, remove copied files"
 
-#Removing copied files but leaving ZIPFILE
+#Removing copied files but leaving archive
 rm -rf "$BACKUP_LOCATION/root"
 rm -rf "$BACKUP_LOCATION/etc"
 rm -rf "$BACKUP_LOCATION/var"
