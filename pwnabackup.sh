@@ -17,7 +17,7 @@
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
 # output backup zip file
-OUTPUT=$(pwnagotchi-backup.tar)
+OUTPUT=$(pwnagotchi-backup.tar.gz)
 
 # temp folder
 BACKUP_LOCATION=/home/pi/pwnabackup
