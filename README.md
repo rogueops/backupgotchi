@@ -1,4 +1,4 @@
-# pwnabackup no root backup script
+# pwnabackup no root local backup script
 No need to enable root.
 
 No need to set a root password.
