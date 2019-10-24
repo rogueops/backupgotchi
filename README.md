@@ -1,4 +1,4 @@
-# pwnabackup no root local backup script
+# BackupGotchi - no root local backup script
 No need to enable root.
 
 No need to set a root password.
@@ -13,11 +13,11 @@ Puts the tar.gz file right in your home folder.
 
 Download script logged in a pi:
     
-    git clone https://github.com/gh0stshell/pwnabackup.git
+    git clone https://github.com/gh0stshell/backupgotchi.git
 
 Run backup script to create a tar of all needed files:
     
-    sudo bash pwnabackup.sh
+    sudo bash gotchibackup.sh
     
 A new tar file called pwnagotchi-backup.tar.gz will now be in your /home/pi directory.
 
