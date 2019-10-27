@@ -34,3 +34,8 @@ Once you move the backup back to your unit after upgrading run the following to 
 If using zip, extract zip file and then use:
 
    sudo cp -R backedUPfolder/* /whereTOcopyBACKUPEDfiles
+   
+Example:
+   sudo cp -R etc/* /etc
+   
+**REBOOT UNIT AFTER RESTORING FILES!**
