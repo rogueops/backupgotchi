@@ -29,6 +29,8 @@ Once you move the backup back to your unit after upgrading run the following to 
 
     sudo tar -xvf pwnagotchi-backup.tar.gz -C/
 
+# Restore For Zip Version
+
 If using zip, extract zip file and then use:
 
    sudo cp -R backedUPfolder /whereTOcopyBACKUPEDfiles
