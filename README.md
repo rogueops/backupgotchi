@@ -19,12 +19,16 @@ Download script logged in a pi:
 
 Run backup script to create a tar of all needed files:
     
-    sudo bash gotchibackup.sh
+    sudo bash gotchiBACKUPscript.sh
     
 A new tar file called pwnagotchi-backup.tar.gz will now be in your /home/pi directory.
 
-# Restore
+# Restore For Tar Version
 
 Once you move the backup back to your unit after upgrading run the following to restore:
 
     sudo tar -xvf pwnagotchi-backup.tar.gz -C/
+
+If using zip, extract zip file and then use:
+
+   sudo cp -R backedUPfolder /whereTOcopyBACKUPEDfiles
