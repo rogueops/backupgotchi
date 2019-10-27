@@ -5,7 +5,9 @@ No need to set a root password.
 
 No need to enable root login in SSH.
 
-No need to install zip.
+No need to install zip if using TAR version.
+
+**ZIP version will check for zip and auto install if missing.**
 
 Puts the tar.gz file right in your home folder.
 
