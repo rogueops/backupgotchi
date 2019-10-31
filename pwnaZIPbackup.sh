@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Version 1.3b
+# Version 1.5b
 #
 # Modded version of original backup
 # script that does not requite root
@@ -15,11 +15,13 @@
 # name of the ethernet gadget interface on the host
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
+TIMESTAMP=$(date +"%m-%d-%y")
+
 # output backup zip file
-OUTPUT=$(pwnagotchi-backup.zip)
+OUTPUT=pwnagotchi-backup-$TIMESTAMP.zip
 
 # temporary folder
-BACKUP_LOCATION=/home/pi/
+BACKUP_LOCATION=$PWD/backupFiles/
 
 # what to backup
 FILES_TO_BACKUP=(
@@ -35,6 +37,8 @@ FILES_TO_BACKUP=(
   /home/pi/.bashrc
 )
 
+echo "[+] Starting copying of files\n"
+
 if ! test -e /usr/bin/zip; then
     echo "[-] ZIP is not installed, installing zip package before backup starts."
     sudo apt install -y zip
@@ -44,6 +48,7 @@ fi
 echo "@ backing up $UNIT_HOSTNAME to $OUTPUT ..."
 
 # Deleting old backups before creating new backup archive
+echo "[+] Checking for existing backup and removing if needed\n"
 rm -rf "$BACKUP_LOCATION"
 
 # Create folders & Copy files to backup location
@@ -54,11 +59,15 @@ for file in "${FILES_TO_BACKUP[@]}"; do
   sudo cp -R /$file "$BACKUP_LOCATION$dir/"
 done
 
+echo "[!] Copy completed!\n"
+echo "[+] Starting archive of copied files!\n"
+
 # Archive copied files
 ZIPFILE="$PWD/$OUTPUT"
 pushd $PWD
 cd "$BACKUP_LOCATION"
-zip -r -9 -q "$ZIPFILE" .
+sudo zip -r -9 -q "$ZIPFILE" .
 popd
 
+echo ""
 echo "[+] Backup completed!"
