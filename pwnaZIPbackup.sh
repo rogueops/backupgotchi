@@ -60,8 +60,3 @@ pushd $PWD
 cd "$BACKUP_LOCATION"
 zip -r -9 -q "$ZIPFILE" .
 popd
-
-#Removing copied files but leaving ZIPFILE
-rm -rf "$BACKUP_LOCATION/root"
-rm -rf "$BACKUP_LOCATION/etc"
-rm -rf "$BACKUP_LOCATION/var"
