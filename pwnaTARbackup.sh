@@ -1,6 +1,6 @@
 !/usr/bin/env bash
 #
-# Version 1.4b
+# Version 1.5b
 #
 # Modded version of original backup
 # script that does not requite root
@@ -17,7 +17,7 @@
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
 # output backup zip file
-OUTPUT=$(pwnagotchi-backup.tar.gz)
+OUTPUT=pwnagotchi-backup.tar.gz
 
 # temp folder
 BACKUP_LOCATION=/home/pi/pwnabackup
@@ -44,6 +44,8 @@ echo "[!] Remove existing backup if exists first!"
 # Deleting old backups before creating new backup archive
 rm -rf "$BACKUP_LOCATION"
 
+echo "[+] Starting copying of files\n"
+
 # Create folders & Copy files to backup location
 for file in "${FILES_TO_BACKUP[@]}"; do
   dir=$(dirname $file)
@@ -63,4 +65,5 @@ cd "$BACKUP_LOCATION"
 tar -cvzf "$ZIPFILE" .
 popd
 
+echo ""
 echo "[+] Completed!"
