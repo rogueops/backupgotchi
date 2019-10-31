@@ -7,9 +7,9 @@
 # to be setup/enabled and puts the
 # output zip file in the pi home
 # folder and all copied files
-# under /home/pi/pwnabackup
+# under current directory
 #
-# Backup: sudo ./pwnabackup.sh
+# Backup: sudo ./pwnaTARbackup.sh
 #
 # Restore: sudo tar -xvf /home/pi/nameOFfile.tar.gz -C/
 #
@@ -22,7 +22,7 @@ TIMESTAMP=$(date +"%m-%d-%y")
 OUTPUT=pwnagotchi-backup-$TIMESTAMP.tar.gz
 
 # temp folder
-BACKUP_LOCATION=/home/pi/pwnabackup
+BACKUP_LOCATION=$PWD/backupFiles/
 
 # what to backup
 FILES_TO_BACKUP=(
@@ -64,7 +64,7 @@ echo "[+] Now archiving files copied\n"
 ZIPFILE="$PWD/$OUTPUT"
 pushd $PWD
 cd "$BACKUP_LOCATION"
-tar -cvzf "$ZIPFILE" .
+sudo tar -cvzf "$ZIPFILE" .
 popd
 
 echo ""
