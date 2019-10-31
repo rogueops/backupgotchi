@@ -32,6 +32,7 @@ FILES_TO_BACKUP=(
   /etc/hosts
   /etc/motd
   /var/log/pwnagotchi.log
+  /home/pi/.bashrc
 )
 
 if ! test -e /usr/bin/zip; then
