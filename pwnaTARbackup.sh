@@ -16,8 +16,10 @@
 
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
+TIMESTAMP=$(date +"%m-%d-%y")
+
 # output backup zip file
-OUTPUT=pwnagotchi-backup.tar.gz
+OUTPUT=pwnagotchi-backup-$TIMESTAMP.tar.gz
 
 # temp folder
 BACKUP_LOCATION=/home/pi/pwnabackup
