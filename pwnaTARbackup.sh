@@ -63,9 +63,4 @@ cd "$BACKUP_LOCATION"
 tar -cvzf "$ZIPFILE" .
 popd
 
-echo "[+] Completing final task, remove copied files"
-
-#Removing copied files but leaving archive
-rm -rf "$BACKUP_LOCATION/root"
-rm -rf "$BACKUP_LOCATION/etc"
-rm -rf "$BACKUP_LOCATION/var"
+echo "[+] Completed!"
