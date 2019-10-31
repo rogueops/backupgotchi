@@ -44,5 +44,7 @@ If using zip, extract zip file and then use:
 Example:
 
     sudo cp -R etc/* /etc
-   
-**REBOOT UNIT AFTER RESTORING FILES!**
+
+# Final Step
+
+    sudo reboot
