@@ -60,3 +60,5 @@ pushd $PWD
 cd "$BACKUP_LOCATION"
 zip -r -9 -q "$ZIPFILE" .
 popd
+
+echo "[+] Backup completed!"
