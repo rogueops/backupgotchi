@@ -7,9 +7,11 @@ No need to enable root login in SSH.
 
 No need to install zip if using TAR version.
 
-**ZIP version will check for zip and auto install if missing.**
+Adds date of backup to file name.
 
-Puts the tar.gz file right in your home folder.
+**ZIP version will check for zip and auto install if missing. Requires internet.**
+
+Puts the tar.gz or zip file in a folder called backup in the directory you are currently in.
 
 # Usage
 
@@ -17,9 +19,13 @@ Download script logged in a pi:
     
     git clone https://github.com/gh0stshell/backupgotchi.git
 
-Run backup script to create a tar of all needed files:
+Run backup script to create a tar ball of all needed files:
     
-    sudo bash gotchiBACKUPscript.sh
+    sudo bash pwnaTARbackup.sh
+    
+Run backup script to create a zip archive of all needed files:
+
+    sudo bash pwnaZIPbackup.sh
     
 A new tar file called pwnagotchi-backup.tar.gz will now be in your /home/pi directory.
 
