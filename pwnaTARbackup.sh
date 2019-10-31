@@ -1,6 +1,6 @@
 !/usr/bin/env bash
 #
-# Version 1.5b
+# Version 1.6
 #
 # Modded version of original backup
 # script that does not requite root
