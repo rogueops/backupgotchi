@@ -34,6 +34,7 @@ FILES_TO_BACKUP=(
   /etc/hosts
   /etc/motd
   /var/log/pwnagotchi.log
+  /home/pi/.bashrc
 )
 
 echo "[+] backing up $UNIT_HOSTNAME to $OUTPUT ..."
