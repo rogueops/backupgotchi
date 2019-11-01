@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Version 1.6
+# Version 1.7
 #
 # Modded version of original backup
 # script that does not requite root
@@ -8,8 +8,8 @@
 # output zip file in the pi home
 # under /home/pi/pwnabackup
 #
-# Usage: sudo ./pwnabackup.sh
-# OR     sudo bash pwnabackup.sh
+# Usage: sudo ./pwnaZIPbackup.sh
+# OR     sudo bash pwnaZIPbackup.sh
 #
 
 # name of the ethernet gadget interface on the host
