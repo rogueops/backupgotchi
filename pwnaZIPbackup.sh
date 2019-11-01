@@ -18,7 +18,7 @@ UNIT_HOSTNAME=$(cat /etc/hostname)
 TIMESTAMP=$(date +"%m-%d-%y")
 
 # output backup zip file
-OUTPUT=pwnagotchi-backup-$TIMESTAMP.zip
+OUTPUT=gotchiBackup-$TIMESTAMP.zip
 
 # temporary folder
 BACKUP_LOCATION=$PWD/backupFiles/
