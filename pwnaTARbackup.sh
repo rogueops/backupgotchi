@@ -9,7 +9,9 @@
 # folder and all copied files
 # under current directory
 #
-# Backup: sudo ./pwnaTARbackup.sh
+# Backup: ./pwnaTARbackup.sh
+# or
+# bash pwnaTARbackup.sh
 #
 # Restore: sudo tar -xvf /home/pi/nameOFfile.tar.gz -C/
 #
