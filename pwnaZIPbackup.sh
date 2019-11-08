@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Version 1.7
+# Version 1.8
 #
 # Modded version of original backup
 # script that does not requite root
@@ -11,6 +11,12 @@
 # Usage: sudo ./pwnaZIPbackup.sh
 # OR     sudo bash pwnaZIPbackup.sh
 #
+
+SUDO=''
+if (( $EUID != 0 )); then
+    SUDO='sudo'
+fi
+$SUDO bash pwnaZIPbackup.sh
 
 # name of the ethernet gadget interface on the host
 UNIT_HOSTNAME=$(cat /etc/hostname)
