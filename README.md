@@ -11,7 +11,7 @@ Adds date of backup to file name.
 
 **ZIP version will check for zip and auto install if missing. Requires internet.**
 
-Puts the tar.gz or zip file in a folder called backup in the directory you are currently in.
+Puts the tar.gz or zip file in the directory you are currently in. Files will be in their own folder.
 
 # Usage
 
