@@ -1,6 +1,6 @@
 !/usr/bin/env bash
 #
-# Version 1.6
+# Version 1.7
 #
 # Modded version of original backup
 # script that does not requite root
@@ -13,6 +13,12 @@
 #
 # Restore: sudo tar -xvf /home/pi/nameOFfile.tar.gz -C/
 #
+
+SUDO=''
+if (( $EUID != 0 )); then
+    SUDO='sudo'
+fi
+$SUDO bash pwnaTARbackup.sh
 
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
