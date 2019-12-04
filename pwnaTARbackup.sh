@@ -30,15 +30,21 @@ BACKUP_LOCATION=$PWD/backupFiles/
 FILES_TO_BACKUP=(
   /root/brain.nn
   /root/brain.json
-  /root/.api-report.json
   /root/handshakes
   /root/peers
+  /root/.api-report.json
+  /root/.ssh
+  /root/.bashrc
+  /root/.profile
   /etc/pwnagotchi/
   /etc/hostname
   /etc/hosts
   /etc/motd
   /var/log/pwnagotchi.log
+  /var/log/pwnagotchi*.gz
+  /home/pi/.ssh
   /home/pi/.bashrc
+  /home/pi/.profile
 )
 
 echo "[+] backing up $UNIT_HOSTNAME to $OUTPUT ..."
