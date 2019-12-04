@@ -16,12 +16,6 @@
 # Restore: sudo tar -xvf /home/pi/nameOFfile.tar.gz -C/
 #
 
-SUDO=''
-if (( $EUID != 0 )); then
-    SUDO='sudo'
-fi
-$SUDO bash pwnaTARbackup.sh
-
 UNIT_HOSTNAME=$(cat /etc/hostname)
 
 TIMESTAMP=$(date +"%m-%d-%y")
