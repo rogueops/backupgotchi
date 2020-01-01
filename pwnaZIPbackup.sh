@@ -42,6 +42,7 @@ FILES_TO_BACKUP=(
   /home/pi/.ssh
   /home/pi/.bashrc
   /home/pi/.profile
+  /etc/ssh/
 )
 
 echo "[+] Starting copying of files\n"
